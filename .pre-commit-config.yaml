@@ -1,0 +1,40 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: add_requirements
+        name: add requirements
+        entry: utilities/custom_pipreqs_hook.sh
+        language: script
+        pass_filenames: false
+        always_run: true
+-   repo: https://github.com/asottile/seed-isort-config
+    rev: v2.2.0
+    hooks:
+    - id: seed-isort-config
+-   repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.2.2
+    hooks:
+    - id: isort
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: check-yaml
+    -   id: name-tests-test
+        args: [--django]
+-   repo: https://github.com/psf/black
+    rev: 19.10b0
+    hooks:
+    - id: black
+      language_version: python3
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.3
+    hooks:
+    - id: flake8
+-   repo: local
+    hooks:
+    -   id: mypy
+        name: mypy
+        entry: mypy .
+        language: python
+        pass_filenames: false
+        always_run: true

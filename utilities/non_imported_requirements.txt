@@ -1,0 +1,9 @@
+mypy==0.910
+pipreqs==0.4.11
+pre-commit==2.15.0
+nltk==3.6.5
+rouge-score==0.0.4
+accelerate==0.11.0
+datasets==1.16.1
+sklearn==0.0
+python-dotenv==0.19.2
