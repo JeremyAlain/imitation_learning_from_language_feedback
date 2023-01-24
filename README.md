@@ -41,7 +41,16 @@ pre-commit install
 ## Dataset
 
 ## Download our SLF5K dataset from HugginfaceHub
-You can download the SLF5K datast from the HugginfaceHub. We provide the following dataset splits: 
+You can [download](https://huggingface.co/datasets/JeremyAlain/SLF5K) the SLF5K datast from Hugging Face.
+
+Simply run the following command to download the dataset:
+```
+from datasets import load_dataset
+dataset = load_dataset("JeremyAlain/SLF5K")
+```
+For more information see the dataset repository [here](https://huggingface.co/datasets/JeremyAlain/SLF5K).
+
+We provide the following dataset splits: 
 - Train Data: 5000 samples
 - Development Data: 200 samples
 - Validation Data: 500 samples
@@ -62,8 +71,10 @@ We provide datasets for the following experiments:
 - finetuning on initial summaries (100, 1K, 5K)
 - finetuning on feedback + refinements (100, 1K, 5K)
 - Reward Model Classification and Comparison (100, 1K, 5K)
+- Standard Reward Model (5K)
 
-The standard OPT-RM was trained on a dataset that you can generate with (Todo).
+Note that the datasets with 100 and 1K samples always take the first samples
+from the 5K dataset in order e.g. `5k_data[:100]`.
 
 ### Download Results 
 All the results (mostly based on human comparisons) can be found in the same Google Drive in the folder `results`. The plots 
@@ -74,6 +85,12 @@ We provide a small script to download the data from Stiennon et al. We split off
 in case you somehow want to extend our dataset with more samples. You don't actually need to download their data. The script can be found in 
 `data/tldr_dataset_stiennon_et_al/download_data_from_stiennon_et_al.sh`.
 
+# Model
+We release the final finetuned reward models, i.e. OPT-RM-13B and OPT-RM-1.3B.
+You can download the models from the Hugging Face Hub:
+OPT-RM-13B: [link](https://huggingface.co/HiTZ/lmloss-opt-rm-13b)
+OPT-RM-1.3B: [link](https://huggingface.co/HiTZ/lmloss-opt-rm-1.3b)
 
 ## Citation
 If you use the code on this website or the algorithm of our paper, please cite use: 
+TBD
