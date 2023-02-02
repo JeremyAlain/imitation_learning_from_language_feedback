@@ -91,6 +91,11 @@ You can download the models from the Hugging Face Hub:
 OPT-RM-13B: [link](https://huggingface.co/HiTZ/lmloss-opt-rm-13b)
 OPT-RM-1.3B: [link](https://huggingface.co/HiTZ/lmloss-opt-rm-1.3b)
 
+### Note
+In the code we refer to InstructRM (as defined in our paper) as causal_response (we adapted the name for the paper). So in order to run InstructRM, take a look at `scoring_functions/causal_response` and to ensemble the various log-probabilities use `experiments/ensemble_causal_response_selections.py`.
+
+OPT-RM-1.3B: [link](https://huggingface.co/HiTZ/lmloss-opt-rm-1.3b
+
 ## Citation
 If you use the code on this website or the algorithm of our paper, please cite use: 
 TBD
